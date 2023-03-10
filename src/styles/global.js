@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import './theme.js';
 
 export default createGlobalStyle`
     * {
@@ -6,24 +7,17 @@ export default createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
     }
+
     body {
-        background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
-        color: ${({ theme }) => theme.COLORS.PINK_100};
-        -webkit-font-smoothing: antialiased;
+        background: ${({ theme }) => theme.COLORS.GRAY_800};
+        height: 100vh;
+        width: 100%;
+
+        overflow-y: hidden;
     }
-    body, input, button, textarea {
+
+    body, p, input, textarea, h1, h2 {
+        color: ${({ theme }) => theme.COLORS.GRAY_100};
         font-family: 'Roboto Slab', serif;
-        font-size: 16px;
-        outline: none;
-    }
-    a {
-        text-decoration: none;
-    }
-    button, a {
-        cursor: pointer;
-        transition: filter 0.2s;
-    }
-    button:hover, a:hover {
-        filter: brightness(0.9);
     }
 `;
